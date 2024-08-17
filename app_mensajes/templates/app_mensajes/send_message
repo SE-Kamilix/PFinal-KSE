@@ -1,0 +1,15 @@
+{% extends 'app_base/base.html' %}
+{% load static %}
+
+{% block title %}Send a Message{% endblock %}
+{% block header_title %}New Message{% endblock %}
+{% block header_subtitle %}Reach out to another user{% endblock %}
+{% block header_image %}{% static 'assets/img/send-message-bg.jpg' %}{% endblock %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>
+{% endblock %}

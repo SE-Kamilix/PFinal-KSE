@@ -1,0 +1,15 @@
+{% extends 'app_base/base.html' %}
+{% load static %}
+
+{% block title %}Create or Edit Page{% endblock %}
+{% block header_title %}Manage Pages{% endblock %}
+{% block header_subtitle %}Create a new page or edit an existing one{% endblock %}
+{% block header_image %}{% static 'assets/img/page-bg.jpg' %}{% endblock %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+{% endblock %}

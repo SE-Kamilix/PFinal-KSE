@@ -1,0 +1,14 @@
+{% extends 'app_base/base.html' %}
+{% load static %}
+
+{% block title %}Logout{% endblock %}
+
+{% block content %}
+    <h2>Logout</h2>
+    <p>Are you sure you want to log out?</p>
+    <form method="post" action="{% url 'logout' %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Logout</button>
+        <a href="{% url 'profile' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'app_base/base.html' %}
+{% load static %}
+
+{% block title %}User Profile{% endblock %}
+{% block header_title %}{{ user.username }}'s Profile{% endblock %}
+{% block header_subtitle %}Learn more about this user{% endblock %}
+{% block header_image %}{% static 'assets/img/profile-bg.jpg' %}{% endblock %}
+
+{% block content %}
+<h2>{{ user.username }}'s Profile</h2>
+<p><strong>Email:</strong> {{ user.email }}</p>
+<a href="{% url 'profile' %}" class="btn btn-primary">Back to My Profile</a>
+{% endblock %}

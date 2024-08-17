@@ -1,0 +1,15 @@
+{% extends 'app_base/base.html' %}
+{% load static %}
+
+{% block title %}Login{% endblock %}
+{% block header_title %}Login to Your Account{% endblock %}
+{% block header_subtitle %}Access your personalized dashboard{% endblock %}
+{% block header_image %}{% static 'assets/img/login-bg.jpg' %}{% endblock %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+{% endblock %}

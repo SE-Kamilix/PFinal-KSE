@@ -1,0 +1,15 @@
+{% extends 'app_base/base.html' %}
+{% load static %}
+
+{% block title %}Create or Edit Post{% endblock %}
+{% block header_title %}Create a New Post{% endblock %}
+{% block header_subtitle %}Share your thoughts with the world{% endblock %}
+{% block header_image %}{% static 'assets/img/post-bg.jpg' %}{% endblock %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Save Post</button>
+</form>
+{% endblock %}

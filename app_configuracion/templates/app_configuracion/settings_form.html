@@ -1,0 +1,15 @@
+{% extends 'app_base/base.html' %}
+{% load static %}
+
+{% block title %}Settings{% endblock %}
+{% block header_title %}Update Your Settings{% endblock %}
+{% block header_subtitle %}Customize your experience{% endblock %}
+{% block header_image %}{% static 'assets/img/settings-bg.jpg' %}{% endblock %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+{% endblock %}

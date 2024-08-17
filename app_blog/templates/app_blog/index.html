@@ -1,0 +1,15 @@
+{% extends 'app_base/base.html' %}
+
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block header_title %}Welcome to Our Blog!{% endblock %}
+{% block header_subtitle %}This is the homepage where you can see the latest blog posts and updates.{% endblock %}
+{% block header_image %}{% static 'assets/img/home-bg.jpg' %}{% endblock %}
+
+{% block content %}
+    <a href="{% url 'post_list' %}" class="btn btn-primary">View All Posts</a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'post_form' %}" class="btn btn-success">Create New Post</a>
+    {% endif %}
+{% endblock %}

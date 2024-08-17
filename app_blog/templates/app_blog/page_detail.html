@@ -1,0 +1,13 @@
+{% extends 'app_base/base.html' %}
+{% load static %}
+
+{% block title %}{{ page.title }}{% endblock %}
+{% block header_title %}{{ page.title }}{% endblock %}
+{% block header_subtitle %}Learn more about this topic{% endblock %}
+{% block header_image %}{% static 'assets/img/page-bg.jpg' %}{% endblock %}
+
+{% block content %}
+<article>
+    <p>{{ page.content }}</p>
+</article>
+{% endblock %}

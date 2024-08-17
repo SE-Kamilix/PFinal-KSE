@@ -1,0 +1,16 @@
+{% extends 'app_base/base.html' %}
+{% load static %}
+
+{% block title %}Contact Us{% endblock %}
+{% block header_title %}Get in Touch{% endblock %}
+{% block header_subtitle %}We'd love to hear from you{% endblock %}
+{% block header_image %}{% static 'assets/img/contact-bg.jpg' %}{% endblock %}
+
+{% block content %}
+<h2>Contact Us</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Send</button>
+</form>
+{% endblock %}

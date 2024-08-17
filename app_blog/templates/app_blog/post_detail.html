@@ -1,0 +1,18 @@
+{% extends 'app_base/base.html' %}
+{% load static %}
+
+{% block title %}{{ post.title }}{% endblock %}
+{% block header_title %}{{ post.title }}{% endblock %}
+{% block header_subtitle %}{{ post.subtitle }}{% endblock %}
+{% block header_image %}{% static 'assets/img/post-bg.jpg' %}{% endblock %}
+
+{% block content %}
+<article>
+    <p>{{ post.body }}</p>
+    <p class="post-meta">
+        Posted by <a href="#">{{ post.author.username }}</a> on {{ post.created_at|date:"F d, Y" }}
+    </p>
+</article>
+<hr>
+<a href="{% url 'post_list' %}" class="btn btn-primary">Back to Posts</a>
+{% endblock %}

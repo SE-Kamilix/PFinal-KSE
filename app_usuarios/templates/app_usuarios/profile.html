@@ -1,0 +1,14 @@
+{% extends 'app_base/base.html' %}
+{% load static %}
+
+{% block title %}Profile{% endblock %}
+{% block header_title %}Your Profile{% endblock %}
+{% block header_subtitle %}Manage your account details{% endblock %}
+{% block header_image %}{% static 'assets/img/profile-bg.jpg' %}{% endblock %}
+
+{% block content %}
+<h2>Your Profile</h2>
+<p><strong>Username:</strong> {{ user.username }}</p>
+<p><strong>Email:</strong> {{ user.email }}</p>
+<a href="{% url 'profile_edit' %}" class="btn btn-primary">Edit Profile</a>
+{% endblock %}
